@@ -12,25 +12,28 @@ class Xapp extends StatelessWidget {
           title:Text("TextWidget"),
         ),
         body: Center(
-          child:Container(
-            child: Text(
-              "Hello Flutter",
-              textAlign: TextAlign.end,
-              style: TextStyle(
-                fontSize: 40.0,
-                color: Color.fromARGB(255, 255, 0, 50),
+          child: Container(
+            child: Container(
+              child: Image.network(
+                "https://user-gold-cdn.xitu.io/2020/3/19/170f05cf47137426?imageView2/1/w/1304/h/734/q/85/format/webp/interlace/1",
+                scale: 2.0,// 缩放
+//                fit: BoxFit.fill, // 充满整个容器
+//                fit: BoxFit.contain,  // 拉伸铺满可能会有空袭
+//                fit:BoxFit.cover,// 充满可能有裁切 保持图片原比例
+//                  fit:BoxFit.fitHeight, // 充满高度 横向可能被裁切
+//                  fit:BoxFit.fitWidth, // 充满横向  高度可能被裁切
+                fit:BoxFit.scaleDown, // 保持图片原来的样式
+                // 设置fit 属性 需要 width height 如下设置
+                width: double.infinity,
+                height: double.infinity,
+                color: Colors.lightGreenAccent,   // 设置图片底色
+                colorBlendMode: BlendMode.color,  // 混合模式  （滤镜）
+                repeat: ImageRepeat.repeatY, // 图片repeat重复 充满容器
               ),
-
-            ),
-            alignment: Alignment.topLeft,
-            width: 500.0,
-            height: 400.0,
-//            color: Colors.blueAccent,
-//            padding: const EdgeInsets.all(20.0),
-            padding: const EdgeInsets.fromLTRB(10.0, 20.0, 0.0, 0.0),
-            margin: const EdgeInsets.all(20.0),
-            decoration: BoxDecoration(
-              gradient: const LinearGradient(colors: [Colors.blue,Colors.amber,Colors.deepOrange]), // 渐变
+              alignment: Alignment.topCenter,
+              height: 400.0,
+              width: 300.0,
+              color: Colors.amber,
             ),
           ),
         ),
