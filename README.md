@@ -83,6 +83,7 @@ Container2:
 - padding 内边距 `EdgeInsets.all() 统一设置`
 - margin 外边距
 - decoration 色彩背景
+
 ```
 内边距
 EdgeInsets.all() 统一设置
